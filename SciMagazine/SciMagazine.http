@@ -1,0 +1,6 @@
+@SciMagazine_HostAddress = http://localhost:5022
+
+GET {{SciMagazine_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
