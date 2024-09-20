@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SciMagazine.Core.Common
+namespace SciMagazine.Core.Common.Classes
 {
     public abstract class User
     {
