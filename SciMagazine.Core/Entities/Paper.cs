@@ -9,13 +9,15 @@ namespace SciMagazine.Core.Entities
         public string Abstract { get; private set; }
         public PaperStatus PaperStatus { get; private set; }
         public Researcher Author { get; private set; }
+        public Academic Reviewer { get; private set; }
         public List<Review> Reviews { get; set; } = new();
 
-        private Paper(string title, string @abstract, Researcher researcher)
+        private Paper(string title, string @abstract, Researcher researcher, Academic reviewer)
         {
             Title = title;
             Abstract = @abstract;
             Author = researcher;
+            Reviewer = reviewer;
             PaperStatus = PaperStatus.Submitted;
         }
 
@@ -26,9 +28,11 @@ namespace SciMagazine.Core.Entities
             NotifyUser();
         }
 
-        public static Paper SubmitPaper(string title, string @abstract, Researcher researcher)
+        public static Paper SubmitPaper(string title, string @abstract, Researcher researcher, Academic academic)
         {
-            return new Paper(title, @abstract, researcher);
+            var paper = new Paper(title, @abstract, researcher, academic);
+            academic.AssignPaper(paper);
+            return paper;
         }
 
 
@@ -47,7 +51,7 @@ namespace SciMagazine.Core.Entities
 
         private void NotifyUser()
         {
-
+            // logic for notify
         }
 
 

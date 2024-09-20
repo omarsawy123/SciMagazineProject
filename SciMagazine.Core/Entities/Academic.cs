@@ -1,4 +1,4 @@
-﻿using SciMagazine.Core.Common;
+﻿using SciMagazine.Core.Common.Classes;
 using SciMagazine.Core.Enums;
 
 namespace SciMagazine.Core.Entities
@@ -6,21 +6,32 @@ namespace SciMagazine.Core.Entities
 
     public class Academic : User
     {
-        public List<Review> AssignedReviews { get; private set; } = new();
+        public List<Paper> AssignedPapers { get; private set; } = new();
 
 
+
+        public List<Paper> GetAssignedPapers() => AssignedPapers;
+
+        public void AssignPaper(Paper paper)
+        {
+            if (AssignedPapers.Any(r => r.Id == paper.Id))
+            {
+                throw new InvalidOperationException();
+            }
+
+            AssignedPapers.Add(paper);
+        }
 
         public void SubmitReview(Paper paper, string feedback, ReviewDecision reviewDecision)
         {
-            if (!AssignedReviews.Any(r => r.Paper.Id == paper.Id))
+            if (!AssignedPapers.Any(r => r.Id == paper.Id))
             {
-                // throw ex
+                throw new InvalidOperationException();
             }
 
-            var review = new Review(feedback, reviewDecision, this, paper);
-
+            var review = Review.CreateReview(feedback, reviewDecision, this, paper);
             paper.AddReview(review);
-            AssignedReviews.RemoveAll(r => r.Paper.Id == paper.Id);
+            AssignedPapers.RemoveAll(r => r.Id == paper.Id);
         }
     }
 }
