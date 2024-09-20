@@ -11,12 +11,17 @@ namespace SciMagazine.Core.Entities
         public Paper Paper { get; private set; }
 
 
-        public Review(string feedback, ReviewDecision decision, Academic academic, Paper paper)
+        private Review(string feedback, ReviewDecision decision, Academic academic, Paper paper)
         {
             Feedback = feedback;
             Decision = decision;
             Paper = paper;
             Reviewer = academic;
+        }
+
+        public static Review CreateReview(string feedback, ReviewDecision decision, Academic academic, Paper paper)
+        {
+            return new Review(feedback, decision, academic, paper);
         }
 
 
