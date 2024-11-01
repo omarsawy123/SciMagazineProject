@@ -20,6 +20,7 @@ namespace SciMagazine.Core.Entities
             }
 
             AssignedPapers.Add(paper);
+            
         }
 
         public void SubmitReview(Paper paper, string feedback, ReviewDecision reviewDecision)
