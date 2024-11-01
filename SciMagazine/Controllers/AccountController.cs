@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SciMagazine.Application.DTOs;
 using SciMagazine.Application.Interfaces.IServices;
+using SciMagazine.Application.Interfaces.IUseCases;
 
 namespace SciMagazine.Controllers
 {
@@ -9,16 +10,16 @@ namespace SciMagazine.Controllers
     public class AccountController : ControllerBase
     {
 
-        private readonly IEmailServices _emailServices;
-        public AccountController(IEmailServices emailServices)
+        private readonly IRegisterUseCase _registerUseCase;
+        public AccountController(IRegisterUseCase registerUseCase)
         {
-            _emailServices = emailServices;
+            _registerUseCase = registerUseCase;
         }
 
         [HttpPost("send-register-request")]
-        public async Task<IActionResult> SendRegisterRequest(RegisterRequestEmail request)
+        public async Task<IActionResult> SendRegisterRequest(RegisterRequestDto request)
         {
-            var result = await _emailServices.SendApprovalEmailToAdmin(request);
+            var result = await _registerUseCase.SendRegisterRequest(request);
             return Ok(result);
         }
     }
