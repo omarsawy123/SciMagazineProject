@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SciMagazine.Core.Common.Interfaces
+namespace SciMagazine.Application.Common.Interfaces
 {
     public interface IBaseRepository<T> where T : class
     {
