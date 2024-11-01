@@ -5,11 +5,13 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SciMagazine", "SciMagazine.csproj", "{3CBFA244-C073-404B-8ED8-129C8525F8B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciMagazine.Core", "..\SciMagazine.Core\SciMagazine.Core.csproj", "{7B125E3E-BDC5-44A3-8AF6-2B66ED68ABCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SciMagazine.Core", "..\SciMagazine.Core\SciMagazine.Core.csproj", "{7B125E3E-BDC5-44A3-8AF6-2B66ED68ABCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciMagazine.Application", "..\SciMagazine.Application\SciMagazine.Application.csproj", "{81373803-EB5F-45D6-A3A8-EB4F3DE7D0E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SciMagazine.Application", "..\SciMagazine.Application\SciMagazine.Application.csproj", "{81373803-EB5F-45D6-A3A8-EB4F3DE7D0E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciMagazine.Infrastructure", "..\SciMagazine.Infrastructure\SciMagazine.Infrastructure.csproj", "{0FDFC76F-A46A-41FD-A99E-A3B78830DB9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SciMagazine.Infrastructure", "..\SciMagazine.Infrastructure\SciMagazine.Infrastructure.csproj", "{0FDFC76F-A46A-41FD-A99E-A3B78830DB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciMagazine.Tests", "..\SciMagazine.Tests\SciMagazine.Tests.csproj", "{2146FAD2-5155-440C-8E71-5F06B945D46A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0FDFC76F-A46A-41FD-A99E-A3B78830DB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FDFC76F-A46A-41FD-A99E-A3B78830DB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FDFC76F-A46A-41FD-A99E-A3B78830DB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2146FAD2-5155-440C-8E71-5F06B945D46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2146FAD2-5155-440C-8E71-5F06B945D46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2146FAD2-5155-440C-8E71-5F06B945D46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2146FAD2-5155-440C-8E71-5F06B945D46A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

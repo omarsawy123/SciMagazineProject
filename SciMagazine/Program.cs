@@ -1,4 +1,8 @@
 
+using SciMagazine.Application;
+using SciMagazine.Infrastructure;
+using SciMagazine.Infrastructure.Options;
+
 namespace SciMagazine
 {
     public class Program
@@ -13,6 +17,13 @@ namespace SciMagazine
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.Configure<SendGridOptions>(options => builder.Configuration.GetSection("SendGrid")
+            .Bind(options));
+
+            builder.Services
+                .AddInfrastructureServices(builder.Configuration)
+                .AddApplicationServices(builder.Configuration);
 
             var app = builder.Build();
 
