@@ -12,8 +12,5 @@ namespace SciMagazine.Core.Common.Classes
         public string UserName { get; private set; }
         public string Email { get; private set; }
 
-
-        
-
     }
 }
