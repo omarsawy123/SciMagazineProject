@@ -1,4 +1,5 @@
 ﻿using SciMagazine.Core.Interfaces;
+using SciMagazine.Core.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace SciMagazine.Core.Entities
 {
     public class RegisterAttachments 
     {
-        public IFileAttachment PersonalId { get; set; }
-        public IFileAttachment AcademicCertificate { get; set; }
+        public Attachment PersonalId { get; set; }
+        public Attachment AcademicCertificate { get; set; }
     }
 }
