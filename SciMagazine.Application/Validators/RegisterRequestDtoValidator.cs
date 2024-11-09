@@ -28,7 +28,7 @@ namespace SciMagazine.Application.Validators
             RuleFor(x => x.Attachments.PersonalId).NotNull().WithMessage("PersonalId is required")
                  .When(x => x.Attachments != null);
 
-            RuleFor(x => x.Attachments.AcademicCertificate).NotNull().WithMessage("PersonalId is required")
+            RuleFor(x => x.Attachments.AcademicCertificate).NotNull().WithMessage("Academic Certificate is required")
                  .When(x => x.Attachments != null);
 
         }
