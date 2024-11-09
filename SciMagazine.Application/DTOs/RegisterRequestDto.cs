@@ -13,6 +13,6 @@ namespace SciMagazine.Application.DTOs
         public string UserName { get; set; }
         public string Email { get; set; }
         public UserRole UserRole { get; set; }
-        public RegisterAttachments Attachments { get; set; }
+        public RegisterAttachments Attachments { get; set; } 
     }
 }

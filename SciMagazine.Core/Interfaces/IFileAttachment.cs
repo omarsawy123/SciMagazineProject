@@ -9,7 +9,7 @@ namespace SciMagazine.Core.Interfaces
     public interface IFileAttachment
     {
         string Name { get; }
-        string Description { get; }
+        string FileType { get; }
         string FilePath {  get; }
     }
 }
