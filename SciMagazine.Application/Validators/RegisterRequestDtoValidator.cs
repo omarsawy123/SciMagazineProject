@@ -1,23 +1,17 @@
 ﻿using FluentValidation;
 using SciMagazine.Application.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SciMagazine.Core.Interfaces;
 
 namespace SciMagazine.Application.Validators
 {
-    public class RegisterRequestDtoValidator :  AbstractValidator<RegisterRequestDto>
+    public class RegisterRequestDtoValidator : AbstractValidator<RegisterRequestDto>
     {
         public RegisterRequestDtoValidator()
         {
             // Rule for UserName - it should not be null, empty, or whitespace
             RuleFor(x => x.UserName)
-                .NotEmpty().WithMessage("User name cannot be empty.")
-                .Must(name => name.Trim().Length > 0).WithMessage("User name cannot be whitespace.")
-                .MaximumLength(50).WithMessage("User name cannot exceed 50 characters.")
-                .WithMessage("User name is required.");
+                .NotEmpty().WithMessage("User name cannot be empty.");
+                
 
             // Rule for Email - it should be a valid email format
             RuleFor(x => x.Email)
@@ -25,8 +19,20 @@ namespace SciMagazine.Application.Validators
                 .EmailAddress().WithMessage("Invalid email format.");
 
             // Rule for UserRole - ensure it is a valid enum value
-            RuleFor(x => x.UserRole)
-                .IsInEnum().WithMessage("Invalid user role specified.");
+            RuleFor(x => x.UserRole).IsInEnum().WithMessage("Invalid user role specified.");
+
+
+            RuleFor(x => x.Attachments)
+                .NotNull().WithMessage("Registeration Attachments are required");
+
+            RuleFor(x => x.Attachments.PersonalId).NotNull().WithMessage("PersonalId is required")
+                 .When(x => x.Attachments != null);
+
+            RuleFor(x => x.Attachments.AcademicCertificate).NotNull().WithMessage("Academic Certificate is required")
+                 .When(x => x.Attachments != null);
+
         }
+
+
     }
 }
