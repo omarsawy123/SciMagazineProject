@@ -1,5 +1,6 @@
 ﻿using ErrorOr;
 using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using SciMagazine.Application.DTOs;
 using SciMagazine.Application.Interfaces.IServices;
 using SciMagazine.Application.Interfaces.IUseCases;
@@ -24,7 +25,8 @@ namespace SciMagazine.Application.UseCases
             if (!validationResult.IsValid)
             {
                 var errors = validationResult.Errors
-                    .ConvertAll(error => Error.Validation(
+                    .ConvertAll(error => Error.Custom(
+                        type: StatusCodes.Status400BadRequest,
                         code: error.PropertyName,
                         description: error.ErrorMessage
                     ));
