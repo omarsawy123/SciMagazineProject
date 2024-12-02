@@ -1,0 +1,25 @@
+@Path = /api/Account;
+
+
+Post {{HostAddress}}/api/Account/send-register-request
+Content-Type: application/json
+
+{
+  "userName": "Omar",
+  "email": "omar@mail.com",
+  "userRole": 1,
+  "attachments": [
+    {
+      "name": "string",
+      "filePath": "string",
+      "fileType": "string",
+      "requiredAttachmentType": 2
+    },
+    {
+      "name": "string",
+      "filePath": "string",
+      "fileType": "string",
+      "requiredAttachmentType": 1
+    }
+  ]
+}

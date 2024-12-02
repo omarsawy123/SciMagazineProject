@@ -12,6 +12,9 @@ namespace SciMagazine.Core.Entities
     {
         public int Id { get; set; }
         public ApplicationStatus Status { get; set; }
-        public User AssignedUser { get; set; }
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public UserRole UserRole { get; set; }
+        public ICollection<RegisterAttachment> Attachments { get; set; } = new List<RegisterAttachment>();
     }
 }

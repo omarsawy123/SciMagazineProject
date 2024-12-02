@@ -1,4 +1,4 @@
-﻿namespace SciMagazine.Application.Enums
+﻿namespace SciMagazine.Core.Enums
 {
     public enum UserRole
     {

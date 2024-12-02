@@ -20,7 +20,8 @@ namespace SciMagazine.Controllers
         public async Task<IActionResult> SendRegisterRequest(RegisterRequestDto request)
         {
             var result = await _registerUseCase.SendRegisterRequest(request);
-            return Ok(result);
+
+            return result.IsError ? BadRequest(result.Errors) : Ok(result.Value);
         }
     }
 }

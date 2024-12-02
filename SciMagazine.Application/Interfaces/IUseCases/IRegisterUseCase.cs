@@ -1,4 +1,5 @@
-﻿using SciMagazine.Application.DTOs;
+﻿using ErrorOr;
+using SciMagazine.Application.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace SciMagazine.Application.Interfaces.IUseCases
 {
     public interface IRegisterUseCase
     {
-        Task<bool> SendRegisterRequest(RegisterRequestDto request);
+        Task<ErrorOr<bool>> SendRegisterRequest(RegisterRequestDto request);
     }
 }

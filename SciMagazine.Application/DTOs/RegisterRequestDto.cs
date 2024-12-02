@@ -1,5 +1,5 @@
-﻿using SciMagazine.Application.Enums;
-using SciMagazine.Core.Entities;
+﻿using SciMagazine.Core.Entities;
+using SciMagazine.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +10,9 @@ namespace SciMagazine.Application.DTOs
 {
     public class RegisterRequestDto
     {
-        public string UserName { get; set; }
-        public string Email { get; set; }
+        public string UserName { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
         public UserRole UserRole { get; set; }
-        public RegisterAttachments Attachments { get; set; } 
+        public ICollection<RegisterAttachmentDto> Attachments { get; set; } = new List<RegisterAttachmentDto>();
     }
 }

@@ -22,13 +22,6 @@ namespace SciMagazine.Infrastructure.Services
             return true;
         }
 
-        private async Task SendMail()
-        {
-            await Task.Run(() =>
-            {
-                Thread.Sleep(1000);
-            });
-        }
 
 
         public async Task SendEmailAsync(
