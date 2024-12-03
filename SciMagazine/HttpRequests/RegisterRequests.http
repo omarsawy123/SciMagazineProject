@@ -1,7 +1,7 @@
-@Path = /api/Account;
+@Path = /api/Account
+@HostAddress = https://localhost:7033
 
-
-Post {{HostAddress}}/api/Account/send-register-request
+Post {{HostAddress}}{{Path}}/send-register-request
 Content-Type: application/json
 
 {
